@@ -1,9 +1,16 @@
 import React from 'react';
+import { addToDB } from '../LocalStorage/LocalStorage';
 import "./UserData.css"
 
 const UserData = (props) => {
-    const { name, age, company, balance, email, phone } = props.user;
-    console.log(props.user);
+    const { _id, name, age, company, balance, email, phone } = props.user;
+
+    const handleStorage = (id) => {
+        // set to local storage
+        console.log(id);
+        addToDB(id);
+    }
+
     return (
         <div className="single-user">
             <h3>{name}</h3>
@@ -12,6 +19,7 @@ const UserData = (props) => {
             <p>Balance: {balance}</p>
             <p>Email: {email}</p>
             <p>Phone: {phone}</p>
+            <button onClick={() => handleStorage(_id)}>Save to Database</button>
         </div>
     );
 };

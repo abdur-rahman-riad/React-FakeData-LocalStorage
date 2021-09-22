@@ -12,3 +12,13 @@ p{
 h1,h2,h3{
     margin: 5px 0;
 }
+
+.single-user button {
+    margin: 5px 0;
+    padding: 5px 12px;
+    border: none;
+    background-color: darkblue;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
